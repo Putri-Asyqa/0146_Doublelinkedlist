@@ -58,5 +58,12 @@ public:
             current = current->next;
         }
 
+                if (current->next != NULL && current->next->noMhs == nim)
+        {
+            cout << "\nDuplicate roll numbers not allowed" << endl;
+            return;
+        }
+
+
 
 
