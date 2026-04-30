@@ -134,7 +134,7 @@ public:
         }
     }
 
-    void revTraverse()
+    void searchNode()
     {
         if (START == NULL)
         {
@@ -142,19 +142,22 @@ public:
             return;
         }
 
+        int rollNo;
+        cout << "\nEnter the roll number to search: ";
+        cin >> rollNo;
+
         Node *current = START;
-        while (current->next != NULL)
+
+        while (current != NULL && current->noMhs != rollNo)
         {
             current = current->next;
         }
 
-        cout << "\nRecords in descending order:\n";
-
-        while (current != NULL)
-        {
-            cout << current->noMhs << " ";
-            current = current->prev;
-        }
+        if (current == NULL)
+            cout << "\nRecord not found" << endl;
+        else
+            cout << "\nRecord found: " << current->noMhs << endl;
     }
+};
 
 
